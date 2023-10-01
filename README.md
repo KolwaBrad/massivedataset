@@ -48,6 +48,7 @@ project-root/
 ```
 
 Running the Project
+
 Question 1
 Place your dataset file (input_data.xlsx) inside the data/ directory.
 
@@ -58,6 +59,7 @@ Run the following command to execute Question 1:
 ```
 
 The script will generate language-specific Excel files (en-xx.xlsx) in the results/ directory.
+
 Question 2
 Make sure you have the English (en), Swahili (sw), and German (de) JSONL files (e.g., en-US.jsonl, de-DE.jsonl, sw-KE.jsonl) in the project directory.
 

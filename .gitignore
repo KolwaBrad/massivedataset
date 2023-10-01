@@ -12,3 +12,6 @@
 
 # Ignore all xml files
 *.xml
+
+#Ignore all json files
+*.json

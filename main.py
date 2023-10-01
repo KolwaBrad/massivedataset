@@ -24,7 +24,7 @@ def generate_excel(language):
         os.makedirs(output_folder, exist_ok=True)
         output_file_path = os.path.join(output_folder, f'en-{language[:2]}.xlsx')
         mergedPdf.to_excel(output_file_path, index=True)
-        print(f"Finished processed {language}")
+        print(f"Finished processing {language}")
     
     except Exception as e:
         print(f"Error in file {language}: {e}")

@@ -1,0 +1,11 @@
+# Ignore log files
+*.log
+
+# Ignore all jsonl file
+*.jsonl
+
+# Ignore all xlsx file
+*.xlsx
+
+# Ignore all gz files
+*.gz

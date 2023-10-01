@@ -9,3 +9,6 @@
 
 # Ignore all gz files
 *.gz
+
+# Ignore all xml files
+*.xml

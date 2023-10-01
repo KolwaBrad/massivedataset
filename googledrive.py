@@ -3,6 +3,17 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
+# fetch email
+file_path = "email.txt"
+try:
+    with open(file_path, "r") as file:
+        my_email = file.read()
+except FileNotFoundError:
+    print(f"File not found: {file_path}")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+
 credentials = service_account.Credentials.from_service_account_file('massivedataset-400718-3bd0975735a7.json', scopes=['https://www.googleapis.com/auth/drive'])
 
 drive_service = build('drive', 'v3', credentials=credentials)
@@ -28,7 +39,7 @@ folder_id = folder.get('id')
 permission = {
     'type': 'user',
     'role': 'writer',
-    'emailAddress': 'jeremy.nduati@strathmore.edu'
+    'emailAddress': my_email
 }
 drive_service.permissions().create(fileId=folder_id, body=permission).execute()
 

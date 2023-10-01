@@ -23,7 +23,25 @@ You can install the required Python libraries/packages using the following comma
 pip install jsonlines json os pandas sys
 ```
 
-Project Structure
+```
+pip install json
+```
+
+```
+pip install os
+```
+
+```
+pip install pandas
+```
+
+```
+pip install sys
+```
+
+
+## Project Structure
+
 The project structure should resemble the following:
 
 ```
@@ -47,9 +65,10 @@ project-root/
 └── other_files...
 ```
 
-Running the Project
+## Running the Project
 
 Question 1
+
 Place your dataset file (input_data.xlsx) inside the data/ directory.
 
 Run the following command to execute Question 1:
@@ -61,6 +80,7 @@ Run the following command to execute Question 1:
 The script will generate language-specific Excel files (en-xx.xlsx) in the results/ directory.
 
 Question 2
+
 Make sure you have the English (en), Swahili (sw), and German (de) JSONL files (e.g., en-US.jsonl, de-DE.jsonl, sw-KE.jsonl) in the project directory.
 
 Run the following command to execute Question 2:

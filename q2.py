@@ -42,3 +42,5 @@ for lang_file in ['en-US.jsonl', 'de-DE.jsonl', 'sw-KE.jsonl']:
 
 # Combine the train data from all languages into one file
 combine_data('train_en-US.jsonl', 'train_sw-KE.jsonl', 'train_de-DE.jsonl')
+
+print("Executed Successfully")

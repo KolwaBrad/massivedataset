@@ -83,10 +83,17 @@ Question 2
 
 Make sure you have the English (en), Swahili (sw), and German (de) JSONL files (e.g., en-US.jsonl, de-DE.jsonl, sw-KE.jsonl) in the project directory.
 
-Run the following command to execute Question 2:
+Run the following command to execute Question 2(shell command):
 
 ```
 python q2.py
 ```
 
 The script will generate separate JSONL files for English, Swahili, and German in the results/ directory. Additionally, it will create a large JSON file (translations.json) showcasing translations from English to other languages.
+
+
+Run the following command to upload files to google drive:
+
+```
+python googledrive.py
+```

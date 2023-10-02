@@ -13,6 +13,11 @@ def write_data(file_name, data):
     with jsonlines.open(file_name, mode='w') as writer:
         writer.write_all(data)
 
+def pretty_print_json(file_path):
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    print(json.dumps(data, indent=4))
+
 def combine_data(en_file, sw_file, de_file):
     en_train, _, _ = split_data(en_file)
     sw_train, _, _ = split_data(sw_file)
@@ -42,5 +47,5 @@ for lang_file in ['en-US.jsonl', 'de-DE.jsonl', 'sw-KE.jsonl']:
 
 # Combine the train data from all languages into one file
 combine_data('train_en-US.jsonl', 'train_sw-KE.jsonl', 'train_de-DE.jsonl')
-
+pretty_print_json('combined.json')
 print("Executed Successfully")

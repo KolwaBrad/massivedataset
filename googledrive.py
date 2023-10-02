@@ -30,7 +30,7 @@ def upload_file(file_path, parent_folder_id):
     drive_service.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
 folder_metadata = {
-    'name': 'Computer Graphics CAT 1',
+    'name': 'Group 7 CAT 1 Computer Graphics',
     'mimeType': 'application/vnd.google-apps.folder'
 }
 folder = drive_service.files().create(body=folder_metadata, fields='id').execute()

@@ -1,14 +1,14 @@
 import pandas as pd
 
 def split_data(file_name):
-    data = pd.read_json(file_name, lines=True)
-    train = data[:int(len(data)*0.8)]
-    dev = data[int(len(data)*0.8):int(len(data)*0.9)]
-    test = data[int(len(data)*0.9):]
+    data = pd.read_json(file_name, lines=True)[['id', 'utt', 'annot_utt']]
+    train = data[:int(len(data) * 0.8)]
+    dev = data[int(len(data) * 0.8):int(len(data) * 0.9)]
+    test = data[int(len(data) * 0.9):]
     return train, dev, test
 
 def write_data(file_name, data):
-    data.to_json(file_name, orient='records', lines=True)
+    data[['id', 'utt', 'annot_utt']].to_json(file_name, orient='records', lines=True)
 
 def pretty_print_json(file_path):
     data = pd.read_json(file_path, lines=True)
@@ -20,7 +20,7 @@ def combine_data(en_file, sw_file, de_file):
     de_train, _, _ = split_data(de_file)
 
     combined_data = pd.concat([en_train.add_prefix('en_'), sw_train.add_prefix('sw_'), de_train.add_prefix('de_')], axis=1)
-    combined_data.to_json('combined.json', orient='records', lines=True)
+    combined_data[['en_id', 'en_utt', 'sw_id', 'sw_utt', 'de_id', 'de_utt']].to_json('combined.json', orient='records', lines=True)
 
 # Split the data into train/dev/test and write to separate files
 for lang_file in ['en-US.jsonl', 'de-DE.jsonl', 'sw-KE.jsonl']:
@@ -32,4 +32,4 @@ for lang_file in ['en-US.jsonl', 'de-DE.jsonl', 'sw-KE.jsonl']:
 # Combine the train data from all languages into one file
 combine_data('train_en-US.jsonl', 'train_sw-KE.jsonl', 'train_de-DE.jsonl')
 pretty_print_json('combined.json')
-print("Executed Successfully")
+print("Executed Successfully")

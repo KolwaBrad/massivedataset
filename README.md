@@ -20,7 +20,7 @@ Before running the project, ensure you have the following prerequisites installe
 You can install the required Python libraries/packages using the following command:
 
 ```
-pip install jsonlines json os pandas sys
+pip install jsonlines
 ```
 
 ```
